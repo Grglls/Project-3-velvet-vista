@@ -1,0 +1,16 @@
+.OrderListItem {
+    background-color: var(--white);
+    border: 0.2vmin solid var(--tan-3);
+    border-radius: 1vmin;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 2vmin;
+    margin-bottom: 3vmin;
+    padding: 2vmin;
+    width: 100%;
+}
+
+.OrderListItem.selected, .OrderListItem:not(.selected):hover {
+    border-color: var(--orange);
+    border-width: 0.2vmin;
+}
