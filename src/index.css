@@ -139,11 +139,7 @@ code {
 .form-container {
   padding: 3vmin;
   /* background-color: var(--tan-1); */
-
   background-color: rgba(0,0,0,0.5);
-  /* background-color: rgba(255, 255, 255, 0.5); */
-  /* filter: blur(6px); */
-
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
 }
