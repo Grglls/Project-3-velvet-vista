@@ -7,7 +7,6 @@ import Logo from '../../components/Logo/Logo';
 import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function NewOrderPage({ user, setUser }) {
@@ -64,7 +63,6 @@ export default function NewOrderPage({ user, setUser }) {
           { user !== null ? 
             <>
               <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-              <UserLogOut user={user} setUser={setUser} />
             </>
           :
             <p>Test</p>

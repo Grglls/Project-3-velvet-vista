@@ -1,6 +1,20 @@
 import React, { useState } from "react";
+import "./HomePage.css";
 
-export default function HomePage ({uploadImage}) {
+export default function HomePage() {
+  return (
+    <main className="HomePage">
+      <div>
+        <header>
+          <h1 className="hero-title">Wardrobe Essentials</h1>
+          <p className="hero-desc"></p>
+        </header>
+      </div>
+    </main>
+  );
+};
+
+// export default function HomePage ({uploadImage}) {
 //   const [image, setImage] = useState('');
 //   const _handleImageChange = (e) => {
 //     setImage(e.target.files[0]);
@@ -21,15 +35,15 @@ export default function HomePage ({uploadImage}) {
 //     }
 //   }
 
-    return (
-      <main className="HomePage">
-        <div>
-            Home Page Test
-        </div>
-        <form onSubmit={_handleSubmit}>
-          <input type="file" onChange={_handleImageChange} />
-          <button>Submit</button>
-        </form>
-      </main>
-    );
-  }
+  //   return (
+  //     <main className="HomePage">
+  //       <div>
+  //           Home Page Test
+  //       </div>
+  //       <form onSubmit={_handleSubmit}>
+  //         <input type="file" onChange={_handleImageChange} />
+  //         <button>Submit</button>
+  //       </form>
+  //     </main>
+  //   );
+  // }
