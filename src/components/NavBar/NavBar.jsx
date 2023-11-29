@@ -1,17 +1,20 @@
 import "./NavBar.css";
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { logOut } from '../../utilities/users-service';
+
 import Logo from '../../components/Logo/Logo';
 import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+// import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
 // To do: update <a> tags to <Link/> react tags, match to our pages.
 
 export default function NavBar({ user, setUser, searchTerm, setSearchTerm}){
     const _handleLogOut = function() {
         setUser(null);
+        logOut();
     }
     
     const _handleChange = function(event) {

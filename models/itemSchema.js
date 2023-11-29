@@ -4,7 +4,8 @@ const itemSchema = new Schema({
   name: { type: String, required: true },
   emoji: String,
   category: {type: Schema.Types.ObjectId, ref: 'Category'},
-  price: { type: Number, required: true }
+  price: { type: Number, required: true },
+  size: {type: String}
 }, {
   timestamps: true
 });
