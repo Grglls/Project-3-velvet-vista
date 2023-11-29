@@ -5,7 +5,13 @@
   align-items: center;
   background-color: var(--white);
   border-radius: 2vmin;
-}
+  background-color: #646464;
+  background-image: url('../../assets/images/hero-bg.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;}
 
 .AuthPage h3 {
   margin-top: 4vmin;
