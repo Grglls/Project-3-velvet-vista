@@ -26,14 +26,17 @@ export default function OrderHistoryPage({user, setUser}) {
   const currentOrder = orders.find((order) => order._id === activeOrder);
 
   return (
-    <main className="NewOrderPage">
-      <aside>
-        <Logo />
-\        <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-        <UserLogOut user={user} setUser={setUser} />
-      </aside>
-      <OrderList orders={ orders } activeOrder={ activeOrder } setActiveOrder={ setActiveOrder } />
-      <OrderDetail order={ currentOrder } />
-    </main>
+    <>
+      
+      <main className="NewOrderPage">
+        <aside>
+          <Logo />
+          <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
+          <UserLogOut user={user} setUser={setUser} />
+        </aside>
+        <OrderList orders={ orders } activeOrder={ activeOrder } setActiveOrder={ setActiveOrder } />
+        <OrderDetail order={ currentOrder } />
+      </main>
+    </>
   );
 }

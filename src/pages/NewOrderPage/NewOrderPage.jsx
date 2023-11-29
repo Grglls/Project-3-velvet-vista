@@ -8,6 +8,7 @@ import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
+import NavBar from '../../components/NavBar/NavBar';
 
 export default function NewOrderPage({ user, setUser }) {
   const [cart, setCart] = useState(null);
@@ -51,26 +52,34 @@ export default function NewOrderPage({ user, setUser }) {
   }
 
   return (
-    <main className="NewOrderPage">
-      <aside>
-        <Logo />
-        <CategoryList
-          categories={categoriesRef.current}
-          activeCat={activeCat}
-          setActiveCat={setActiveCat}
+    <>
+      <main className="NewOrderPage">
+        <aside>
+          <Logo />
+          <CategoryList
+            categories={categoriesRef.current}
+            activeCat={activeCat}
+            setActiveCat={setActiveCat}
+          />
+          { user !== null ? 
+            <>
+              <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
+              <UserLogOut user={user} setUser={setUser} />
+            </>
+          :
+            <p>Test</p>
+          }
+        </aside>
+        <MenuList
+          menuItems={menuItems.filter(item => item.category.name === activeCat)}
+          handleAddToOrder={ handleAddToOrder }
         />
-        <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-        <UserLogOut user={user} setUser={setUser} />
-      </aside>
-      <MenuList
-        menuItems={menuItems.filter(item => item.category.name === activeCat)}
-        handleAddToOrder={ handleAddToOrder }
-      />
-      <OrderDetail
-        order={ cart }
-        handleChangeQty={ handleChangeQty }
-        handleCheckout={ handleCheckout }
-      />
-    </main>
+        <OrderDetail
+          order={ cart }
+          handleChangeQty={ handleChangeQty }
+          handleCheckout={ handleCheckout }
+        />
+      </main>
+    </>
   );
 }
