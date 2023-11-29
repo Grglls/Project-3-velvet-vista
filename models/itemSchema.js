@@ -2,7 +2,7 @@ const Schema = require('mongoose').Schema;
 
 const itemSchema = new Schema({
   name: { type: String, required: true },
-  emoji: String,
+  size: { type: Number, required: true},
   category: {type: Schema.Types.ObjectId, ref: 'Category'},
   price: { type: Number, required: true }
 }, {
