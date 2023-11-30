@@ -20,3 +20,7 @@
 
 
 
+
+
+# Entity Relation Diagram:
+![ERD image](/public/ERD-diagram.jpg)
