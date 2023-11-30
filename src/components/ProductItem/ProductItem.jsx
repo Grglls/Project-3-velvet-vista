@@ -5,7 +5,6 @@ function ProductItem({productItem, setCart}) {
   async function handleAddToOrder(itemId) {
     const cart = await ordersAPI.addItemToCart(itemId);
     setCart(cart);
-    console.log(cart);
   }
 
   return (
