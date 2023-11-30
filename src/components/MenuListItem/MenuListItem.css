@@ -38,3 +38,6 @@
   color: var(--text-light);
 }
 
+.MenuListItem img {
+  width: 100px;
+}

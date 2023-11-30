@@ -20,12 +20,12 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);* {
+  /* background-color: var(--tan-4);* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style-type: none;
-}
+} */
 html {
   scroll-behavior: smooth;
 }

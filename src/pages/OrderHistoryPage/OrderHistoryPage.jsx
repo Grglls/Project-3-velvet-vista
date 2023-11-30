@@ -26,7 +26,6 @@ export default function OrderHistoryPage({user, setUser}) {
 
   return (
     <>
-      
       <main className="NewOrderPage">
         <aside>
           <Logo />
