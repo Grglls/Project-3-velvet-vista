@@ -31,9 +31,11 @@ export default function App() {
       <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <main className="App">
         <Routes>
-          <Route path="/" element={<HomePage name={name} setName={setName} categories={categories} setCategories={setCategories} price={price} setPrice={setPrice} uploadImage={uploadImage} />} />
+          <Route path="/" element={<HomePage name={name} setName={setName} categories={categories} setCategories={setCategories} price={price} setPrice={setPrice}  />} />
         </Routes>
       </main>
     </>
   );
 }
+
+// uploadImage = { uploadImage }
