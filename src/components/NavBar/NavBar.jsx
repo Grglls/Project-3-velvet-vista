@@ -1,17 +1,18 @@
 import "./NavBar.css";
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { logOut } from '../../utilities/users-service';
+import * as itemsAPI from '../../utilities/items-api';
+import * as ordersAPI from '../../utilities/orders-api';
 
 import Logo from '../../components/Logo/Logo';
 import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
-// import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
 // To do: update <a> tags to <Link/> react tags, match to our pages.
 
-export default function NavBar({ user, setUser, searchTerm, setSearchTerm}){
+export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categoriesRef, activeCat, setActiveCat}){
     const _handleLogOut = function() {
         setUser(null);
         logOut();
@@ -25,7 +26,6 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm}){
         event.preventDefault();
 
     }
-
 
     return (
         <>
@@ -47,13 +47,6 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm}){
                 }
             </aside> */}
             
-            {/* From OrderHistoryPage: */}
-            {/* <aside>
-                <Logo />
-                <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-                <UserLogOut user={user} setUser={setUser} />
-            </aside> */}
-            
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <Link to="/" className="navbar-brand">Velvet Vista</Link>
@@ -65,22 +58,22 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm}){
                             <li className="nav-item">
                                 <Link to="/" className="nav-link">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/categories" className="nav-link">Browse (TBC)</Link>
-                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
+                                    Browse
                                 </a>
                                 <ul className="dropdown-menu">
+                                    <CategoryList
+                                        categories={categoriesRef.current}
+                                        activeCat={activeCat}
+                                        setActiveCat={setActiveCat}
+                                    />
+{/* 
                                     <li><a className="dropdown-item" href="#">Action</a></li>
                                     <li><a className="dropdown-item" href="#">Another action</a></li>
                                     <li><hr className="dropdown-divider"></hr></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a className="dropdown-item" href="#">Something else here</a></li> */}
                                 </ul>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                             </li>
                             { (user) ? 
                                 <>

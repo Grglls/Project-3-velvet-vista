@@ -7,7 +7,6 @@ import Logo from '../../components/Logo/Logo';
 import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import NavBar from '../../components/NavBar/NavBar';
 
 export default function NewOrderPage({ user, setUser }) {
   const [cart, setCart] = useState(null);
@@ -54,12 +53,12 @@ export default function NewOrderPage({ user, setUser }) {
     <>
       <main className="NewOrderPage">
         <aside>
-          <Logo />
-          <CategoryList
+          {/* <Logo /> */}
+          {/* <CategoryList
             categories={categoriesRef.current}
             activeCat={activeCat}
             setActiveCat={setActiveCat}
-          />
+          /> */}
           { user !== null ? 
             <>
               <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
