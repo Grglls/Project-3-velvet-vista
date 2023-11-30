@@ -42,10 +42,6 @@ export default function App() {
     getCart();
   }, []);
 
-  async function handleAddToOrder(itemId) {
-    const cart = await ordersAPI.addItemToCart(itemId);
-    setCart(cart);
-  }
   // const uploadImage = async (image) => {
 	// 	const data = new FormData()
 	// 	data.append("file", image)
@@ -87,9 +83,11 @@ export default function App() {
                 price={price} 
                 setPrice={setPrice} 
                 activeCat={activeCat} 
-                menuItems={menuItems}/>} 
-                handleAddToOrder={handleAddToOrder}
+                menuItems={menuItems} 
+                setCart={setCart}
                 searchTerm={searchTerm}
+                />
+              }
               />
         </Routes>
       </main>

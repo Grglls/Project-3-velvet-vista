@@ -1,5 +1,12 @@
-function ProductItem({productItem, handleAddToOrder}) {
-  console.log(productItem);
+import * as ordersAPI from '../../utilities/orders-api';
+
+function ProductItem({productItem, setCart}) {
+
+  async function handleAddToOrder(itemId) {
+    const cart = await ordersAPI.addItemToCart(itemId);
+    setCart(cart);
+    console.log(cart);
+  }
 
   return (
     <div className="col-4">
