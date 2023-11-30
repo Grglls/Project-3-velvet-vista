@@ -1,0 +1,26 @@
+.Product-box {
+  box-shadow: 0 13px 8px -10px rgb(0 0 0 / 10%);
+  background: #fff;
+  border: 1px solid #c9c9c9;
+}
+.Product-content {
+  padding: 1rem;
+}
+.Product-content .Product-title {
+  padding: 0.5rem 0;
+}
+.Product-content .Product-desc {
+  color: #4e4e4e;
+}
+.Product-footer {
+  padding: 10px 15px;
+  background: rgba(247, 247, 247, 1);
+  border-top: 1px solid #c9c9c9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post-size-img {
+  width: 40px;
+  border-radius: 50%;
+}
