@@ -13,6 +13,8 @@ import OrderDetail from '../../components/OrderDetail/OrderDetail';
 // To do: update <a> tags to <Link/> react tags, match to our pages.
 
 export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categoriesRef, activeCat, setActiveCat}){
+    const navigate = useNavigate();
+    
     const _handleLogOut = function() {
         setUser(null);
         logOut();
@@ -20,11 +22,12 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categ
     
     const _handleChange = function(event) {
         setSearchTerm(event.target.value)
+        
     }
     
     const _handleSubmit = function(event) {
         event.preventDefault();
-
+        navigate('/', { state: { searchTerm: searchTerm } });
     }
 
     return (
@@ -100,6 +103,7 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categ
                                 placeholder="Search" 
                                 aria-label="Search" 
                                 onChange={_handleChange}
+                                value={searchTerm}
                             />
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>

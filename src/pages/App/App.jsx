@@ -89,6 +89,7 @@ export default function App() {
                 activeCat={activeCat} 
                 menuItems={menuItems}/>} 
                 handleAddToOrder={handleAddToOrder}
+                searchTerm={searchTerm}
               />
         </Routes>
       </main>
