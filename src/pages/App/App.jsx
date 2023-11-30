@@ -9,6 +9,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import HomePage from '../HomePage/HomePage';
 
 export default function App() {
+  const [user, setUser] = useState(getUser());
   const [name, setName] = useState('');
   const [categories, setCategories] = useState([]);
   const [price, setPrice] = useState('');
@@ -28,9 +29,15 @@ export default function App() {
   
   return (
     <>
-      <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <NavBar user={user} setUser={setUser} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
+      {/* <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
       <main className="App">
         <Routes>
+          {/* client-side route that renders the component instance if the path matches the url in the address bar */}
+          <Route path="/orders/new" element={<NewOrderPage user={user} setUser={setUser} />} />
+          <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser} />} />
+          <Route path="/login" element={<AuthPage user={user} setUser={setUser} />} />
           <Route path="/" element={<HomePage name={name} setName={setName} categories={categories} setCategories={setCategories} price={price} setPrice={setPrice}  />} />
         </Routes>
       </main>
