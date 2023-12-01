@@ -12,7 +12,7 @@ import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
 // To do: update <a> tags to <Link/> react tags, match to our pages.
 
-export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categoriesRef, activeCat, setActiveCat}){
+export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categoriesRef, activeCat, setActiveCat, cart}){
     const navigate = useNavigate();
     
     const _handleLogOut = function() {
@@ -29,6 +29,8 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categ
         event.preventDefault();
         navigate('/', { state: { searchTerm: searchTerm } });
     }
+
+    // console.log(cart.lineItems.length)
 
     return (
         <>            
@@ -61,9 +63,12 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categ
                                         <Link to="/orders" className="nav-link">Order History</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/orders/new" className="nav-link">Cart</Link>
+                                        <Link to="/orders/new" className="nav-link">
+                                            Cart
+                                            <span> {cart ? ` (${cart.totalQty})` : '(0)'}</span>
+                                        </Link>
                                     </li>
-                                    <li className="nav-item">
+                                    <li className="nav-item d-flex">
                                         <Link to="/" className="nav-link" onClick={_handleLogOut}>Log Out</Link>
                                     </li>
                                 </>

@@ -8,8 +8,7 @@ import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
-export default function NewOrderPage({ user, setUser }) {
-  const [cart, setCart] = useState(null);
+export default function NewOrderPage({ user, setUser, cart, setCart }) {
   const [menuItems, setMenuItems] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const categoriesRef = useRef([]);
@@ -46,6 +45,8 @@ export default function NewOrderPage({ user, setUser }) {
 
   async function handleCheckout() {
     await ordersAPI.checkout();
+    setCart({totalQty: 0})
+    console.log(cart.totalQty);
     navigate('/orders');
   }
 
