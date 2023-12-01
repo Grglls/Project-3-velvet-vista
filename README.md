@@ -2,9 +2,9 @@
 ​
 Welcome to Velvet Vista, a full-stack MERN (MongoDB, Express, React, Node.js) e-commerce [web application](https://velvet-vista-60fe4ee35b3e.herokuapp.com/) designed for clothing shopping. This project was developed by Greg, Shima, and Jee Jyee.
 
-![Homepage image](/public/Homepage.jpg)
+![Homepage image](/public/Homepage.png)
 
-![Product image](/public/Product.jpg)
+![Product image](/public/Product.png)
 ​
 ## Overview
 ​
