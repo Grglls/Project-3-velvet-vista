@@ -2,6 +2,8 @@
   box-shadow: 0 13px 8px -10px rgb(0 0 0 / 10%);
   background: #fff;
   border: 1px solid #c9c9c9;
+  margin: 1rem;
+  /* height: 600px; */
 }
 .Product-content {
   padding: 1rem;
@@ -23,4 +25,12 @@
 .post-size-img {
   width: 40px;
   border-radius: 50%;
+}
+
+.Product-img {
+  max-height: 500px;
+}
+
+.Product {
+  margin: 5rem;
 }

@@ -8,8 +8,7 @@ import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
-export default function NewOrderPage({ user, setUser }) {
-  const [cart, setCart] = useState(null);
+export default function NewOrderPage({ user, setUser, cart, setCart }) {
   const [menuItems, setMenuItems] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const categoriesRef = useRef([]);
@@ -46,31 +45,14 @@ export default function NewOrderPage({ user, setUser }) {
 
   async function handleCheckout() {
     await ordersAPI.checkout();
+    setCart({totalQty: 0})
+    console.log(cart.totalQty);
     navigate('/orders');
   }
 
   return (
     <>
       <main className="NewOrderPage">
-        <aside>
-          {/* <Logo /> */}
-          {/* <CategoryList
-            categories={categoriesRef.current}
-            activeCat={activeCat}
-            setActiveCat={setActiveCat}
-          /> */}
-          { user !== null ? 
-            <>
-              <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-            </>
-          :
-            <p>Test</p>
-          }
-        </aside>
-        <MenuList
-          menuItems={menuItems.filter(item => item.category.name === activeCat)}
-          handleAddToOrder={ handleAddToOrder }
-        />
         <OrderDetail
           order={ cart }
           handleChangeQty={ handleChangeQty }

@@ -1,5 +1,11 @@
-function ProductItem({productItem, handleAddToOrder}) {
-  console.log(productItem);
+import * as ordersAPI from '../../utilities/orders-api';
+
+function ProductItem({productItem, setCart}) {
+
+  async function handleAddToOrder(itemId) {
+    const cart = await ordersAPI.addItemToCart(itemId);
+    setCart(cart);
+  }
 
   return (
     <div className="col-4">
@@ -8,7 +14,7 @@ function ProductItem({productItem, handleAddToOrder}) {
           <img src={productItem.image} className="img-fluid" />
         </div>
         <div className="Product-content">
-          <h3 className="Product-title">{productItem.name}</h3>
+          <h5 className="Product-title">{productItem.name}</h5>
           {/* <p className="Product-desc">{props.ProductDesc}</p> */}
         </div>
         <div className="Product-footer">
