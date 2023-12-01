@@ -14,7 +14,7 @@ function ProductItem({productItem, setCart}) {
           <img src={productItem.image} className="img-fluid" />
         </div>
         <div className="Product-content">
-          <h3 className="Product-title">{productItem.name}</h3>
+          <h5 className="Product-title">{productItem.name}</h5>
           {/* <p className="Product-desc">{props.ProductDesc}</p> */}
         </div>
         <div className="Product-footer">
