@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
 import OrderList from '../../components/OrderList/OrderList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
-
 import * as ordersAPI from '../../utilities/orders-api';
+import './OrderHistoryPage.css';
 
 export default function OrderHistoryPage({user, setUser}) {
   const [orders, setOrders] = useState([]);
@@ -26,11 +26,11 @@ export default function OrderHistoryPage({user, setUser}) {
 
   return (
     <>
-      <main className="NewOrderPage">
-        <aside>
+      <main className="OrderHistoryPage">
+        {/* <aside>
           <Logo />
           <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-        </aside>
+        </aside> */}
         <OrderList orders={ orders } activeOrder={ activeOrder } setActiveOrder={ setActiveOrder } />
         <OrderDetail order={ currentOrder } />
       </main>

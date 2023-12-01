@@ -31,25 +31,7 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categ
     }
 
     return (
-        <>
-            {/* From NewOrderPage */}
-            {/* <aside>
-                <Logo />
-                <CategoryList
-                    categories={categories}
-                    activeCat={activeCat}
-                    setActiveCat={setActiveCat}
-                />
-                { user !== null ? 
-                <>
-                    <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-                    <UserLogOut user={user} setUser={setUser} />
-                </>
-                :
-                <p>Test</p>
-                }
-            </aside> */}
-            
+        <>            
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <Link to="/" className="navbar-brand">Velvet Vista</Link>
@@ -63,7 +45,7 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categ
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Browse
+                                    Clothing
                                 </a>
                                 <ul className="dropdown-menu">
                                     <CategoryList
@@ -71,11 +53,6 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categ
                                         activeCat={activeCat}
                                         setActiveCat={setActiveCat}
                                     />
-{/* 
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr className="dropdown-divider"></hr></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li> */}
                                 </ul>
                             </li>
                             { (user) ? 
@@ -96,7 +73,7 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categ
                                 </li>
                             }
                         </ul>
-                        <form className="d-flex" role="search">
+                        {/* <form className="d-flex" role="search">
                             <input 
                                 className="form-control me-2" 
                                 type="search" 
@@ -106,7 +83,7 @@ export default function NavBar({ user, setUser, searchTerm, setSearchTerm, categ
                                 value={searchTerm}
                             />
                             <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+                        </form> */}
                     </div>
                 </div>
             </nav>

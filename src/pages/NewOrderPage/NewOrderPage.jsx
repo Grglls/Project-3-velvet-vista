@@ -52,25 +52,6 @@ export default function NewOrderPage({ user, setUser }) {
   return (
     <>
       <main className="NewOrderPage">
-        <aside>
-          {/* <Logo /> */}
-          {/* <CategoryList
-            categories={categoriesRef.current}
-            activeCat={activeCat}
-            setActiveCat={setActiveCat}
-          /> */}
-          { user !== null ? 
-            <>
-              <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
-            </>
-          :
-            <p>Test</p>
-          }
-        </aside>
-        <MenuList
-          menuItems={menuItems.filter(item => item.category.name === activeCat)}
-          handleAddToOrder={ handleAddToOrder }
-        />
         <OrderDetail
           order={ cart }
           handleChangeQty={ handleChangeQty }
